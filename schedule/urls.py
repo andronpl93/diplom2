@@ -4,5 +4,7 @@ from . import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'', views.start),
+    url(r'^$', views.start),
+    url(r'^graf/$', views.graf),
+    url(r'^graf/([a-z]{3})/$', views.graf),
 ]
