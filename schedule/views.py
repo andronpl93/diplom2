@@ -15,7 +15,7 @@ def start(request):
 
 def graf(request,currency='eur'):
     logging.debug(currency)
-
+    #проеваряю блядский гит
 
     return HttpResponse(json.dumps(parsers[currency]()))
 
