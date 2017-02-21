@@ -2,68 +2,94 @@
 
 // Two charts definition
 var chart1, chart2;
-var objChart={
-        plotOptions: {
+var currensy, chart;
+var pointChart={
+    plotOptions: {
             series: {
                 showInNavigator: true,
-                /*marker: {
+                marker: {
                     enabled: true,
                     lineWidth:5,
                     lineColor: 'blue',
                 },
 
-                lineWidth: 0*/
+                lineWidth: 0
             }
-        },
+    },
+    rangeSelector:{
+                enabled:false,
+
+    },
+
+
+};
+var settings={
+    'graf':{
+           plotOptions: {
+                series: {
+                    showInNavigator: true,
+                }
+           },
+           rangeSelector:{
+                enabled:true,
+                buttons: [{
+                    type: 'month',
+                    count: 1,
+                    text: 'Месяц'
+                }, {
+                    type: 'month',
+                    count: 3,
+                    text: 'Квартал'
+                }, {
+                    type: 'month',
+                    count: 6,
+                    text: 'Пол года'
+                }, {
+                    type: 'year',
+                    count: 1,
+                    text: 'Год'
+                },{
+                    type: 'year',
+                    count: 3,
+                    text: '3 Года'
+                },
+                {
+                    type: 'year',
+                    count: 5,
+                    text: '5 Лет'
+                },{
+                    type: 'year',
+                    count: 10,
+                    text: '10 Лет'
+                },
+                {
+                    type: 'all',
+                    text: 'Все'
+                }],
+                buttonTheme: {
+                        width: 60
+                },
+           },
+
+    },///конец graf
+    'jump': pointChart,
+    'crisis': pointChart,
+    'couple': pointChart,
+
+};
+var objChart={
         tooltip: {
             pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y} </b><br/>',
             valueDecimals: 2
         },
         yAxis: {
             title: {
-                text: 'Деньги'
                 }
         },
-        rangeSelector:{
-            enabled:true,
-            buttons: [{
-                type: 'month',
-                count: 1,
-                text: 'Месяц'
-            }, {
-                type: 'month',
-                count: 3,
-                text: 'Квартал'
-            }, {
-                type: 'month',
-                count: 6,
-                text: 'Пол года'
-            }, {
-                type: 'year',
-                count: 1,
-                text: 'Год'
-            },{
-                type: 'year',
-                count: 3,
-                text: '3 Года'
-            },
-            {
-                type: 'year',
-                count: 5,
-                text: '5 Лет'
-            },{
-                type: 'year',
-                count: 10,
-                text: '10 Лет'
-            },
-            {
-                type: 'all',
-                text: 'Все'
-            }],
-            buttonTheme: {
-                    width: 60
-            },
-     },
+        title: {
+            text: 'График'
+        },
+
         series: []
 };
 var objAjax={
@@ -73,28 +99,35 @@ var objAjax={
                     alert('Произошла какая-то ошибка. Ну хз, попробуйте еще раз ');
                     },
                 success: function(jdata){
+                    objChart.series=[];
                     for (var i=0;i<jdata.len*2;i+=2)
                     {
                         objChart.series.push({name:jdata.dat[i],data:jdata.dat[i+1]});
                     }
+                   // alert(jdata);
                      Highcharts.stockChart('chart_id',objChart);
                 },
-                url: '/graf/rub'
             };
 // Once DOM (document) is finished loading
 $(document).ready(function() {
 
-// $.ajax(objAjax);
-
- $('header li:not(:first-child)').bind('click ',function(){
-    $(' header li').removeClass('selected');
-    $(this).addClass('selected');
-    objAjax.url='/graf/'+$(this).attr('id');
- });
-
+    work();
+    $('header ul li input').bind('click',work);
 });
 
+function work(){
+    //alert(1);
+    currency = $('header input[name=selector]:checked');
+    chart = $('header input[name=selector2]:checked');
+    objAjax.url='/'+chart.attr('id')+'/'+currency.attr('id');
 
+    for(var key in settings[chart.attr('id')]){
+        objChart[key]=settings[chart.attr('id')][key];
+    }
+
+   $.ajax(objAjax);
+
+}
 
 
 /*csrf_token */

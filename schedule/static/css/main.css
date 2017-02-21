@@ -7,23 +7,30 @@ section{
     padding: 0;
     margin: 0;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 section > div,header,footer {
-    margin: 0 auto;
+    margin: 0 ;
 }
 
-header{
-    margin-top: 5%;
-}
+
 .chart{
 
-    width: 90%;
-    height: 60%;
+    width: 70%;
+    height: 80%;
     background-color: black;
 }
 header,footer{
-    width: 90%;
-    height: 5%;
-
+    width: 12%;
+    height: 80%;
+    background-color: rgba(0,0,0,0.5);
+}
+header{
+    border-right: 1px solid #000;
+}
+footer{
+    border-left: 1px solid #000;
 }
