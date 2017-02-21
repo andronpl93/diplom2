@@ -12,10 +12,15 @@ header > ul{
 
 }
 
+header > ul:last-child{
+    height:50%;
+    margin:15% 0 ;
+}
 header ul li {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  flex-wrap: wrap;
   height: 25%;
   margin: 0 5%  ;
   width: 90%;
@@ -25,6 +30,16 @@ header ul li {
   text-align: center;
   border-bottom: 1px solid #111111;
 
+}
+header ul:last-child > li {
+    height: 16%;
+}
+header > ul:last-child > li:last-child{
+    height: 36%;
+}
+header > ul:last-child > li:last-child select{
+    width: 90%;
+    margin: 0 auto;
 }
 
 ul li input[type=radio]{
@@ -41,7 +56,7 @@ ul li label{
   font-size: 1.2em;
   z-index: 9;
   cursor: pointer;
-  padding-left:25px;
+  padding-left:20%;
   -webkit-transition: all 0.25s linear;
   transition: all 0.25s linear;
 }
@@ -63,7 +78,9 @@ ul li .check{
 	transition: border .25s linear;
 	-webkit-transition: border .25s linear;
 }
-
+header > ul:last-child > li:last-child .check{
+  top: 15%;
+}
 ul li:hover .check {
   border: 3px solid #2DC0E8;
 }
@@ -132,7 +149,7 @@ input[type=radio]:checked ~ label{
   width: 5px;
   border-radius: 1px;
   background: #AC1D3F;
-  top: -10px;
+  top: -10%;
 }
 
 .signature .much-heart::after {

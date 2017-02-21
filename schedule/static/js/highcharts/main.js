@@ -1,20 +1,39 @@
 
 
 // Two charts definition
-var chart1, chart2;
+var chart1, chart2,statusDel=1;
 var currensy, chart;
 var pointChart={
+    chart: {
+        type: 'scatter',
+        zoomType: 'xy'
+    },
     plotOptions: {
-            series: {
-                showInNavigator: true,
-                marker: {
-                    enabled: true,
-                    lineWidth:5,
-                    lineColor: 'blue',
-                },
-
-                lineWidth: 0
+        series: {
+                    showInNavigator: true,
+        },
+        scatter: {
+            marker: {
+                radius: 2,
+                states: {
+                    hover: {
+                        enabled: true,
+                        lineColor: 'rgb(100,100,100)'
+                    }
+                }
+            },
+            states: {
+                hover: {
+                    marker: {
+                        enabled: false
+                    }
+                }
+            },
+            tooltip: {
+                headerFormat: '<b>{series.name}</b><br>',
+                pointFormat: '{point.x} cm, {point.y} kg'
             }
+        }
     },
     rangeSelector:{
                 enabled:false,
@@ -22,9 +41,15 @@ var pointChart={
     },
 
 
+
 };
+
+
 var settings={
     'graf':{
+           chart: {
+                type: 'spline',
+           },
            plotOptions: {
                 series: {
                     showInNavigator: true,
@@ -84,13 +109,48 @@ var objChart={
         },
         yAxis: {
             title: {
+            enable: false,
+            //        text:'деньга',
                 }
         },
         title: {
-            text: 'График'
+            enable: false,
+            text: ''
         },
 
         series: []
+};
+var pointSet=function(jdata){
+             objChart.series.push({data: jdata.dat[1]});
+             objChart.xAxis= {
+                            title: {
+                                enabled: true,
+                                text: jdata.dat[0],
+                            },
+                            startOnTick: true,
+                            endOnTick: true,
+                            showLastLabel: true
+             };
+            objChart.yAxis= {
+                        title: {
+                             text: jdata.dat[2],
+                        }
+            };
+             Highcharts.chart('chart_id',objChart);
+};
+var ajaxSet={
+    'graf':function(jdata){
+                    objChart.series=[];
+                    for (var i=0;i<jdata.len*2;i+=2)
+                    {
+
+                        objChart.series.push({name:jdata.dat[i],data:jdata.dat[i+1]});
+                    }
+                    Highcharts.stockChart('chart_id',objChart);
+                },
+    'jump':pointSet,
+    'crisis':pointSet,
+    'couple':pointSet,
 };
 var objAjax={
                 dataType:'json',
@@ -98,36 +158,93 @@ var objAjax={
                 error:function(e){
                     alert('Произошла какая-то ошибка. Ну хз, попробуйте еще раз ');
                     },
-                success: function(jdata){
-                    objChart.series=[];
-                    for (var i=0;i<jdata.len*2;i+=2)
-                    {
-                        objChart.series.push({name:jdata.dat[i],data:jdata.dat[i+1]});
-                    }
-                   // alert(jdata);
-                     Highcharts.stockChart('chart_id',objChart);
-                },
             };
-// Once DOM (document) is finished loading
-$(document).ready(function() {
+
+$(document).ready(function() {///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     work();
-    $('header ul li input').bind('click',work);
+    update_select();
+    $('header ul li input[name=selector]').bind('click',update_select); /// смена валюты обновляет выпадающие списки попарного сравнения
+    $('header ul li input').bind('click',work);                         ///  обновление графика
+    $('header ul li select').bind('change',delete_option);             ///   удалять из соседнего выпадающего списка
 });
 
 function work(){
-    //alert(1);
+
+    if($('header ul li input#couple:checked').length)
+    {
+        if($('header ul li input#couple:checked ~ select option[value]:selected').length!=2)
+            return
+        else
+           $('header ul li input#couple').attr('data-index',$('select[name=cur1]').val()+'_'+$('select[name=cur2]').val());   ///couple/RUB+RUB
+    }
     currency = $('header input[name=selector]:checked');
     chart = $('header input[name=selector2]:checked');
-    objAjax.url='/'+chart.attr('id')+'/'+currency.attr('id');
+    var d_i='';
+    if(chart.attr('data-index')){
+        d_i=chart.attr('data-index')+'/'
+    }
+    objAjax.url='/'+chart.attr('id')+'/'+d_i+currency.attr('id');
 
     for(var key in settings[chart.attr('id')]){
         objChart[key]=settings[chart.attr('id')][key];
     }
-
-   $.ajax(objAjax);
+    objAjax.success=ajaxSet[chart.attr('id')];
+    $.ajax(objAjax);
 
 }
+
+function update_select(){
+    currency = $('header input[name=selector]:checked');
+    var objAjaxSelect={
+                timeout:1000,
+                async: false,
+                error:function(e){
+                    alert('Произошла какая-то ошибка. Ну хз, попробуйте еще раз ');
+                    },
+                success: function(data){
+                    $('.select_currency').html(data);
+                },
+            };
+    objAjaxSelect.url='/update_select/'+currency.attr('id')
+    $.ajax(objAjaxSelect);
+}
+
+function delete_option(obj){
+    var self=$(this);
+    var valSelf=self.val();
+    var context=$('header ul li select').not(self);
+    var contextVal=context.val();
+    update_select();
+            self.val(valSelf);
+            context.val(contextVal);
+            $('option[value='+self.val()+']',context).remove();
+    if($('header ul li input#couple:checked ~ select option[value]:selected').length==2)
+        work();
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*csrf_token */

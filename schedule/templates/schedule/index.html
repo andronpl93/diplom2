@@ -14,23 +14,23 @@
         <header>
             <ul>
                 <li>
-                        <input type="radio" id='uah' name="selector">
-                        <label for="uah">Гривна</label>
+                        <input type="radio" id='UAH' name="selector">
+                        <label for="UAH">Гривна</label>
                         <div class="check"></div>
                 </li>
                 <li>
-                        <input type="radio" id='rub' name="selector" checked>
-                        <label for="rub">Рубль</label>
+                        <input type="radio" id='RUB' name="selector" checked>
+                        <label for="RUB">Рубль</label>
                         <div class="check"></div>
                 </li>
                 <li>
-                        <input type="radio" id='usd' name="selector">
-                        <label for="usd">Доллар</label>
+                        <input type="radio" id='RUB' name="selector">
+                        <label for="RUB">Доллар</label>
                         <div class="check"></div>
                 </li>
                 <li>
-                        <input type="radio" id='eur' name="selector">
-                        <label for="eur">Евро</label>
+                        <input type="radio" id='EUR' name="selector">
+                        <label for="EUR">Евро</label>
                         <div class="check"></div>
                 </li>
 
@@ -38,7 +38,7 @@
 
             <ul>
                 <li>
-                        <input type="radio" id='graf' name="selector2" checked>
+                        <input type="radio" id='graf' name="selector2">
                         <label for="graf">Курсы валют</label>
                         <div class="check"></div>
                 </li>
@@ -53,11 +53,13 @@
                         <div class="check"></div>
                 </li>
                 <li>
-                        <input type="radio" id='couple' name="selector2">
+                        <input type="radio" id='couple' name="selector2" checked>
                         <label for="couple">Попарное сравнение</label>
                         <div class="check"></div>
-                </li>
+                        <select name="cur1" class="select_currency"></select>
+                        <select name="cur2" class="select_currency"></select>
 
+                </li>
             </ul>
         </header>
         <div id="chart_id" class="chart">
