@@ -153,7 +153,7 @@ def normalize(paket):
 
 def parser(url):
     tree = []
-    urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler({' HTTP': 'proxy.server: 3128'})))
+    urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler({'http': 'proxy.server: 3128'})))
     tree.append(et.parse(urllib.request.urlopen(url[1])))
 
     root = []

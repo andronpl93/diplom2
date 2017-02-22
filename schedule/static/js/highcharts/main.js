@@ -204,6 +204,8 @@ $(document).ready(function() {//////////////////////////////////////////////////
 
 function work(){
     restructuring();
+    $('footer div:first-child p:last-child').html('');
+    $('footer div:last-child p:last-child').html('');
     if($('header ul li input.para:checked').length)
     {
         if($('select option[value]:selected').length!=2)
