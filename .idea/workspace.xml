@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="453d44a8-7738-419a-b512-231d2e3d60ae" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schedule/views.py" afterPath="$PROJECT_DIR$/schedule/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schedule/templates/schedule/index.html" afterPath="$PROJECT_DIR$/schedule/templates/schedule/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/schedule/templates/schedule/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="68" column="16" lean-forward="true" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="16" />
+            <state relative-caret-position="119">
+              <caret line="42" column="78" lean-forward="false" selection-start-line="42" selection-start-column="78" selection-end-line="42" selection-end-column="78" />
               <folding />
             </state>
           </provider>
@@ -58,7 +58,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/schedule/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
@@ -122,9 +122,9 @@
         <option value="$PROJECT_DIR$/schedule/urls.py" />
         <option value="$PROJECT_DIR$/schedule/static/js/highcharts/dark-unica.js" />
         <option value="$PROJECT_DIR$/schedule/static/css/main.css" />
-        <option value="$PROJECT_DIR$/schedule/templates/schedule/index.html" />
         <option value="$PROJECT_DIR$/schedule/static/js/highcharts/main.js" />
         <option value="$PROJECT_DIR$/schedule/views.py" />
+        <option value="$PROJECT_DIR$/schedule/templates/schedule/index.html" />
       </list>
     </option>
   </component>
@@ -499,7 +499,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487801631802</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="блять2">
+      <created>1487801846562</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1487801846562</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -534,7 +541,8 @@
     <MESSAGE value="рабочий бэк-энд" />
     <MESSAGE value="поправил интервалі&#10;" />
     <MESSAGE value="блять" />
-    <option name="LAST_COMMIT_MESSAGE" value="блять" />
+    <MESSAGE value="блять2" />
+    <option name="LAST_COMMIT_MESSAGE" value="блять2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -791,14 +799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/schedule/templates/schedule/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="68" column="16" lean-forward="true" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/schedule/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -825,6 +825,14 @@
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schedule/templates/schedule/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="42" column="78" lean-forward="false" selection-start-line="42" selection-start-column="78" selection-end-line="42" selection-end-column="78" />
+          <folding />
         </state>
       </provider>
     </entry>
