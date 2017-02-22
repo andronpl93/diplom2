@@ -201,7 +201,7 @@ $(document).ready(function() {//////////////////////////////////////////////////
     $('header ul select').bind('change',delete_option);             ///   удалять из соседнего выпадающего списка
 
 });
-
+//
 function work(){
     restructuring();
     $('footer div:first-child p:last-child').html('');
