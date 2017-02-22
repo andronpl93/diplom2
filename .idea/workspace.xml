@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="453d44a8-7738-419a-b512-231d2e3d60ae" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schedule/static/js/highcharts/main.js" afterPath="$PROJECT_DIR$/schedule/static/js/highcharts/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schedule/views.py" afterPath="$PROJECT_DIR$/schedule/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,8 +61,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/schedule/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="153" column="18" lean-forward="false" selection-start-line="153" selection-start-column="18" selection-end-line="153" selection-end-column="18" />
+            <state relative-caret-position="306">
+              <caret line="153" column="19" lean-forward="false" selection-start-line="153" selection-start-column="19" selection-end-line="153" selection-end-column="19" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -493,7 +492,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487801304946</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="блять">
+      <created>1487801631802</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1487801631802</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -527,7 +533,8 @@
     <MESSAGE value="попарное сравнение работает&#10;" />
     <MESSAGE value="рабочий бэк-энд" />
     <MESSAGE value="поправил интервалі&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="поправил интервалі&#10;" />
+    <MESSAGE value="блять" />
+    <option name="LAST_COMMIT_MESSAGE" value="блять" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -813,8 +820,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/schedule/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="153" column="18" lean-forward="false" selection-start-line="153" selection-start-column="18" selection-end-line="153" selection-end-column="18" />
+        <state relative-caret-position="306">
+          <caret line="153" column="19" lean-forward="false" selection-start-line="153" selection-start-column="19" selection-end-line="153" selection-end-column="19" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
