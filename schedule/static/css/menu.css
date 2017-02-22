@@ -9,12 +9,15 @@ header > ul{
     margin:20% 0 ;
     padding: 0;
     position: relative;
-
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.3);
 }
+
 
 header > ul:last-child{
     height:50%;
-    margin:15% 0 ;
+    margin:0% 0 ;
+    box-shadow: none;
+
 }
 header ul li {
   display: flex;
@@ -28,18 +31,19 @@ header ul li {
   z-index:2;
   font-size: 1em;
   text-align: center;
-  border-bottom: 1px solid #111111;
+  border-bottom: 1px solid rgba(1,1,1,0.3);
 
 }
+header > ul > li:last-child{
+    border-bottom: 0px solid rgba(1,1,1,0.3);
+}
 header ul:last-child > li {
-    height: 16%;
+    height: 17%;
 }
-header > ul:last-child > li:last-child{
-    height: 36%;
-}
-header > ul:last-child > li:last-child select{
+header ul select{
+    display: block;
     width: 90%;
-    margin: 0 auto;
+    margin: 5% auto;
 }
 
 ul li input[type=radio]{
@@ -49,40 +53,42 @@ ul li input[type=radio]{
 
 
 ul li label{
-  color: #FFF;
+  color: #333;
   display: block;
   position: relative;
   font-weight: 400;
   font-size: 1.2em;
   z-index: 9;
   cursor: pointer;
-  padding-left:20%;
+  padding-left:30%;
   -webkit-transition: all 0.25s linear;
   transition: all 0.25s linear;
 }
+ul:last-child li label{
+  padding-left:20%;
+    font-size: 1.1em;
 
+}
 ul li:hover label{
-	color: #2DC0E8;
+	color: #FF4E00;
 }
 
 ul li .check{
   display: block;
   position: absolute;
-  border: 3px solid #FFF;
+  border: 3px solid #333;
   border-radius: 100%;
   height: 10px;
   width: 10px;
   top: 35%;
-  left: 0;
+  left: 7%;
 	z-index: 5;
 	transition: border .25s linear;
 	-webkit-transition: border .25s linear;
 }
-header > ul:last-child > li:last-child .check{
-  top: 15%;
-}
+
 ul li:hover .check {
-  border: 3px solid #2DC0E8;
+  border: 3px solid #FF4E00;
 }
 
 ul li .check::before {
@@ -100,15 +106,15 @@ ul li .check::before {
 }
 
 input[type=radio]:checked ~ .check {
-  border: 3px solid #31EEFF;
+  border: 3px solid #FF4E00;
 }
 
 input[type=radio]:checked ~ .check::before{
-  background: #31EEFF;
+  background: #FF4E00;
 }
 
 input[type=radio]:checked ~ label{
-  color: #31EEFF;
+  color: #FF4E00;
 }
 
 .signature {
@@ -123,7 +129,7 @@ input[type=radio]:checked ~ label{
 	text-align: center;
 	font-family: Helvetica, Arial, Sans-Serif;
 	font-size: 0.85em;
-	color: #2DC0E8;
+	color: #FF4E00;
 }
 
 .signature .much-heart{
@@ -132,7 +138,7 @@ input[type=radio]:checked ~ label{
 	margin: 0 4px;
 	height: 5px;
 	width: 5px;
-	background: #2DC0E8;
+	background: #FF4E00;
 	border-radius: 1px;
 	-ms-transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
@@ -148,7 +154,7 @@ input[type=radio]:checked ~ label{
   height: 5px;
   width: 5px;
   border-radius: 1px;
-  background: #AC1D3F;
+  background: #FF4E00;
   top: -10%;
 }
 

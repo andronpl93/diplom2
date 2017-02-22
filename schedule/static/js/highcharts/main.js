@@ -2,6 +2,8 @@
 
 // Two charts definition
 var chart1, chart2,statusDel=1;
+var loader=$('#preloader');
+loader.fadeOut();
 var currensy, chart;
 var pointChart={
     chart: {
@@ -31,7 +33,7 @@ var pointChart={
             },
             tooltip: {
                 headerFormat: '<b>{series.name}</b><br>',
-                pointFormat: '{point.x} cm, {point.y} kg'
+                pointFormat: ' {point.y} '
             }
         }
     },
@@ -43,10 +45,7 @@ var pointChart={
 
 
 };
-
-
-var settings={
-    'graf':{
+var dateChart={
            chart: {
                 type: 'spline',
            },
@@ -95,8 +94,10 @@ var settings={
                         width: 60
                 },
            },
+}
 
-    },///конец graf
+var settings={
+    'graf': dateChart,
     'jump': pointChart,
     'crisis': pointChart,
     'couple': pointChart,
@@ -121,6 +122,7 @@ var objChart={
         series: []
 };
 var pointSet=function(jdata){
+            loader.fadeOut(300);
              objChart.series.push({data: jdata.dat[1]});
              objChart.xAxis= {
                             title: {
@@ -136,28 +138,58 @@ var pointSet=function(jdata){
                              text: jdata.dat[2],
                         }
             };
+
              Highcharts.chart('chart_id',objChart);
 };
-var ajaxSet={
-    'graf':function(jdata){
+var dateSet=function(jdata){
+                    loader.fadeOut(300);
                     objChart.series=[];
                     for (var i=0;i<jdata.len*2;i+=2)
                     {
-
                         objChart.series.push({name:jdata.dat[i],data:jdata.dat[i+1]});
                     }
                     Highcharts.stockChart('chart_id',objChart);
-                },
-    'jump':pointSet,
-    'crisis':pointSet,
+};
+var ajaxSet={
+    'graf':dateSet,
+    'jump':dateSet,
+    'crisis':function(jdata){
+                    loader.fadeOut(300);
+                    objChart.series=[];
+                    for (var i=0;i<jdata.len*2;i+=2)
+                    {
+                        objChart.series.push({name:jdata.dat[i],data:jdata.dat[i+1]});
+                    }
+                    var color='rgba(0,172,204,0.4)';
+                    var sp=''
+                    var interval=$('footer div:first-child p:last-child');
+                    for (var i=0; i<jdata.dat[2].length;i++){
+                        sp+='<span style="background-color:'+color+';">';
+                        color == 'rgba(0,172,204,0.4)' ? color='rgba(0,172,0,0.4)': color='rgba(0,172,204,0.4)';
+                        for (var j=0;j<jdata.dat[2][i].length;j++){
+                            sp+=jdata.dat[2][i][j]+', ';
+                        }
+                        sp+='</span>';
+                        interval.append(sp);
+                        sp='';
+                    }
+
+                    for (i=0;i< jdata.dat[3].length;i++){
+                        sp+=jdata.dat[3][i][0]+'-'+jdata.dat[3][i][1]+"="+jdata.dat[3][i][2]+'<br/> ';
+                    }
+                    $('footer div:last-child p:last-child').html(sp);
+                    Highcharts.stockChart('chart_id',objChart);
+    },
     'couple':pointSet,
 };
 var objAjax={
                 dataType:'json',
                 timeout:50000,
                 error:function(e){
+                    loader.fadeOut(300);
                     alert('Произошла какая-то ошибка. Ну хз, попробуйте еще раз ');
                     },
+                async: false,
             };
 
 $(document).ready(function() {///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -166,17 +198,18 @@ $(document).ready(function() {//////////////////////////////////////////////////
     update_select();
     $('header ul li input[name=selector]').bind('click',update_select); /// смена валюты обновляет выпадающие списки попарного сравнения
     $('header ul li input').bind('click',work);                         ///  обновление графика
-    $('header ul li select').bind('change',delete_option);             ///   удалять из соседнего выпадающего списка
+    $('header ul select').bind('change',delete_option);             ///   удалять из соседнего выпадающего списка
+
 });
 
 function work(){
-
-    if($('header ul li input#couple:checked').length)
+    restructuring();
+    if($('header ul li input.para:checked').length)
     {
-        if($('header ul li input#couple:checked ~ select option[value]:selected').length!=2)
+        if($('select option[value]:selected').length!=2)
             return
         else
-           $('header ul li input#couple').attr('data-index',$('select[name=cur1]').val()+'_'+$('select[name=cur2]').val());   ///couple/RUB+RUB
+           $('header ul li input.para').attr('data-index',$('select[name=cur1]').val()+'_'+$('select[name=cur2]').val());   ///couple/RUB+RUB
     }
     currency = $('header input[name=selector]:checked');
     chart = $('header input[name=selector2]:checked');
@@ -190,7 +223,10 @@ function work(){
         objChart[key]=settings[chart.attr('id')][key];
     }
     objAjax.success=ajaxSet[chart.attr('id')];
-    $.ajax(objAjax);
+
+    loader.fadeIn(300,function(){
+                    $.ajax(objAjax)});
+
 
 }
 
@@ -200,33 +236,47 @@ function update_select(){
                 timeout:1000,
                 async: false,
                 error:function(e){
-                    alert('Произошла какая-то ошибка. Ну хз, попробуйте еще раз ');
+                    alert('Произошла какая-то ошибка. Ну хз, попробуйте еще раз2 ');
                     },
                 success: function(data){
+
                     $('.select_currency').html(data);
                 },
             };
-    objAjaxSelect.url='/update_select/'+currency.attr('id')
+    objAjaxSelect.url='/update_select/'+currency.attr('id');
     $.ajax(objAjaxSelect);
 }
 
 function delete_option(obj){
     var self=$(this);
     var valSelf=self.val();
-    var context=$('header ul li select').not(self);
+    var context=$('header ul select').not(self);
     var contextVal=context.val();
     update_select();
             self.val(valSelf);
             context.val(contextVal);
             $('option[value='+self.val()+']',context).remove();
-    if($('header ul li input#couple:checked ~ select option[value]:selected').length==2)
+    if($('select option[value]:selected').length==2 && $('header ul li input.para:checked').length)
         work();
 
 }
 
 
 
+    function restructuring(){
+                if(!$('header ul li input#crisis:checked').length)
+                {
+                    $('header').animate({'width':'16%'},300);
+                    $('#chart_id').animate({'width':'80%'},300);
+                    $('footer').animate({'width':'0%'},300);
+                    $('footer div:first-child p:last-child').html('');
+                    $('footer div:last-child p:last-child').html('');
+                }else{
+                    $('header,footer').animate({'width':'12%'},300);
+                    $('#chart_id').animate({'width':'70%'},300);
+                }
 
+    }
 
 
 

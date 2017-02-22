@@ -6,11 +6,13 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"  />
     <link rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}"  />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/preloader.css' %}"  />
     <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}"/>
 
 </head>
 <body>
     <section>
+
         <header>
             <ul>
                 <li>
@@ -19,17 +21,17 @@
                         <div class="check"></div>
                 </li>
                 <li>
-                        <input type="radio" id='RUB' name="selector" checked>
+                        <input type="radio" id='RUB' name="selector" >
                         <label for="RUB">Рубль</label>
                         <div class="check"></div>
                 </li>
                 <li>
-                        <input type="radio" id='RUB' name="selector">
-                        <label for="RUB">Доллар</label>
+                        <input type="radio" id='USD' name="selector">
+                        <label for="USD">Доллар</label>
                         <div class="check"></div>
                 </li>
                 <li>
-                        <input type="radio" id='EUR' name="selector">
+                        <input type="radio" id='EUR' name="selector" checked>
                         <label for="EUR">Евро</label>
                         <div class="check"></div>
                 </li>
@@ -43,32 +45,48 @@
                         <div class="check"></div>
                 </li>
                 <li>
-                        <input type="radio" id='jump' name="selector2">
+                        <input type="radio" id='jump' name="selector2" class="para"  >
                         <label for="jump">Динамика скачков</label>
                         <div class="check"></div>
                 </li>
                 <li>
-                        <input type="radio" id='crisis' name="selector2">
+                        <input type="radio" id='crisis' name="selector2" class="para" checked>
                         <label for="crisis">Кризисные состояния</label>
                         <div class="check"></div>
                 </li>
                 <li>
-                        <input type="radio" id='couple' name="selector2" checked>
+                        <input type="radio" id='couple' name="selector2" class="para" >
                         <label for="couple">Попарное сравнение</label>
                         <div class="check"></div>
-                        <select name="cur1" class="select_currency"></select>
-                        <select name="cur2" class="select_currency"></select>
 
                 </li>
+                <select name="cur1" class="select_currency"></select>
+                <select name="cur2" class="select_currency"></select>
             </ul>
         </header>
-        <div id="chart_id" class="chart">
+        <div id="chart_id" class="chart"></div>
+        <footer>
+            <div>
+                <p>Интервалы</p><p></p>
+            </div>
+            <div>
+               <p>Разница</p><p></p>
+            </div>
+        </footer>
+
+        <div id="preloader">
+            <div class="cssload-tetrominos">
+                    <div class="cssload-tetromino cssload-box1"></div>
+                    <div class="cssload-tetromino cssload-box2"></div>
+                    <div class="cssload-tetromino cssload-box3"></div>
+                    <div class="cssload-tetromino cssload-box4"></div>
+            </div>
         </div>
-        <footer></footer>
     </section>
 </body>
     <script src="{% static 'js/jquery_1_9_2.js' %}"></script>
     <script src="{% static 'js/highcharts/highcharts.js' %}"></script>
-    <script src="{% static 'js/highcharts/grid.js' %}"></script>
+    <script src="{% static 'js/highcharts/grid.j' %}"></script>
+    <script src="{% static 'js/highcharts/dark-unica.js' %}"></script>
     <script src="{% static 'js/highcharts/main.js' %}"></script>
 </html>

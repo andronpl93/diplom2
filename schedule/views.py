@@ -6,6 +6,7 @@ import csv
 import urllib.request
 import xml.etree.ElementTree as et
 import time
+import math
 
 
 
@@ -30,6 +31,54 @@ def couple(request,cur1='EUR',cur2='RUB',currency='USD'):   # попарное �
         pak['dat'][1][i][0]=pak['dat'][3][i][1]
     return HttpResponse(json.dumps(pak))
 
+def jump(request,cur1='EUR',cur2='RUB',currency='USD'):   # динамика скачков
+    a=[]
+    a.append(cur1)
+    a.append(cur2)
+    pak=parsers[currency](a)
+    pak2={'len':1}
+    pak2['dat']=[['H'],[]]
+    for i in range(3,len(pak['dat'][1])):
+        pak2['dat'][1].append([pak['dat'][1][i][0]])
+        pak2['dat'][1][-1].append(math.sqrt((pak['dat'][1][i][-1]-pak['dat'][1][i-1][-1])**2 + (pak['dat'][3][i][-1]-pak['dat'][3][i-1][-1])**2))
+    return HttpResponse(json.dumps(pak2))
+
+def crisis(request,cur1='EUR',cur2='RUB',currency='USD'):   # кризис говна на палочке
+    a=[]
+    a.append(cur1)
+    a.append(cur2)
+    pak=parsers[currency](a)
+    pak3={'len':1}
+    pak2={}
+    pak3['dat']=[['Кризис'],[]]
+    pak2['dat']=[['Кризис'],[]]
+    for i in range(3,len(pak['dat'][1])):
+        pak2['dat'][1].append([pak['dat'][1][i][0]])
+        pak2['dat'][1][-1].append(math.sqrt((pak['dat'][1][i][-1]-pak['dat'][1][i-1][-1])**2 + (pak['dat'][3][i][-1]-pak['dat'][3][i-1][-1])**2))
+
+
+    avarage=(sum(i[1] for i  in pak2['dat'][1])/len(pak2['dat'][1]))*4
+    for i in range(3,len(pak2['dat'][1])):
+        if pak2['dat'][1][i][1]>avarage:
+            pak3['dat'][1].append([pak2['dat'][1][i][0]])
+            pak3['dat'][1][-1].append(pak2['dat'][1][i][1])
+            pak3['dat'][1][-1].append(i)
+
+
+    pak3['dat'].append([[]])
+    for i in range(0, len(pak3['dat'][1]) - 1):
+        pak3['dat'][-1][-1].append(pak3['dat'][1][i][2])
+        abs(pak3['dat'][1][i][2] - pak3['dat'][1][i+1][2]) > 300 and pak3['dat'][-1].append([])
+    pak3['dat'][-1][-1].append(pak3['dat'][1][-1][2])
+
+    pak3['dat'].append([])
+    for i in range(1, len(pak3['dat'][1])):
+        pak3['dat'][-1].append([])
+        pak3['dat'][-1][-1].append(pak3['dat'][1][i][2])
+        pak3['dat'][-1][-1].append(pak3['dat'][1][i-1][2])
+        pak3['dat'][-1][-1].append(pak3['dat'][1][i][2] - pak3['dat'][1][i-1][2])
+
+    return HttpResponse(json.dumps(pak3))
 
 
 def update_select(request,currency):
@@ -133,10 +182,10 @@ url={
            ['AUD',"http://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/aud.xml"],
            ['QDP',"http://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/gbp.xml"]],
     'RUB':[ ['USD','http://www.cbr.ru/scripts/XML_dynamic.asp?date_req1=01/01/1999&date_req2=31/12/2044&VAL_NM_RQ=R01235'],
-           ['AUD','http://www.cbr.ru/scripts/XML_dynamic.asp?date_req1=01/01/1999&date_req2=31/12/2044&VAL_NM_RQ=R01010']]
-           # ['GBP','http://www.cbr.ru/scripts/XML_dynamic.asp?date_req1=01/01/1999&date_req2=31/12/2044&VAL_NM_RQ=R01035' ],
-          #  ['EUR','http://www.cbr.ru/scripts/XML_dynamic.asp?date_req1=01/01/1999&date_req2=31/12/2044&VAL_NM_RQ=R01239'],
-         #   ['CAD','http://www.cbr.ru/scripts/XML_dynamic.asp?date_req1=01/01/1999&date_req2=31/12/2044&VAL_NM_RQ=R01350']],
+           ['AUD','http://www.cbr.ru/scripts/XML_dynamic.asp?date_req1=01/01/1999&date_req2=31/12/2044&VAL_NM_RQ=R01010'],
+           ['GBP','http://www.cbr.ru/scripts/XML_dynamic.asp?date_req1=01/01/1999&date_req2=31/12/2044&VAL_NM_RQ=R01035' ],
+           ['EUR','http://www.cbr.ru/scripts/XML_dynamic.asp?date_req1=01/01/1999&date_req2=31/12/2044&VAL_NM_RQ=R01239'],
+           ['CAD','http://www.cbr.ru/scripts/XML_dynamic.asp?date_req1=01/01/1999&date_req2=31/12/2044&VAL_NM_RQ=R01350']],
 
 }
 logging.basicConfig(
