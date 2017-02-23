@@ -1,5 +1,6 @@
 body{
     background-color: #EDEEF0;
+    font-size: 100%;
 }
 section{
     width:100%;
@@ -54,10 +55,8 @@ footer > div:first-child{
     border-bottom:1px solid rgba(0,0,0,0.3);
 
 }
-/*
-header{
-    border-right: 1px solid #000;
+@media screen and (orientation: portrait) {
+
+
+
 }
-footer{
-    border-left: 1px solid #000;
-}*/
