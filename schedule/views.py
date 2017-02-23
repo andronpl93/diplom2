@@ -19,7 +19,7 @@ def graf(request,currency='EUR'):   # курс валют
     for i in url[currency]:
         a.append(i[0])
 
-    return HttpResponse(json.dumps(parsers[currency](a)))
+    return HttpResponse(json.dumps(normalize(parsers[currency](a))))
 
 def couple(request,cur1='EUR',cur2='RUB',currency='USD'):   # попарное сравнение
     a=[]
@@ -145,9 +145,10 @@ def parseRUB(curr):
 
 def normalize(paket):
     for i in range(1,len(paket['dat']),2):
-        standart=paket['dat'][i][0][-1]
+        mYmin=min(paket['dat'][i])
+        mYmax=max(paket['dat'][i])
         for j in range(len(paket['dat'][i][:])):
-            paket['dat'][i][j][-1]=round(paket['dat'][i][j][-1]/standart,2)
+            paket['dat'][i][j][-1]=round((paket['dat'][i][j][-1]-myMin)/(mYmax-mYmin),2)
 
     return paket
 
