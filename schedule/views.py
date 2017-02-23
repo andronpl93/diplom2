@@ -145,16 +145,16 @@ def parseRUB(curr):
 
 def normalize(paket):
     for i in range(1,len(paket['dat']),2):
-        mmax=max(paket['dat'][i],key=lambda x: x[-1])
-        mmin=min(paket['dat'][i],key=lambda x: x[-1])
-        for j in range(len(paket['dat'][i][:])):
+        mmax=max(paket['dat'][i][:],key=lambda x: x[-1])[-1]
+        mmin=min(paket['dat'][i][:],key=lambda x: x[-1])[-1]
+        for j in range(len(paket['dat'][i])):
             paket['dat'][i][j][-1]=round((paket['dat'][i][j][-1]-mmin)/(mmax-mmin),2)
 
     return paket
 
 def parser(url): ##
     tree = []
-    urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler({' HTTP': 'proxy.server: 3128'})))
+    urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler({'http': 'proxy.server: 3128'})))
     tree.append(et.parse(urllib.request.urlopen(url[1])))
 
     root = []
@@ -179,7 +179,7 @@ parsers={
 url={
     'EUR':[['JPY',"http://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/jpy.xml"],
            ['USD','http://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/usd.xml'],
-           ['CAD',"http://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/cad.xml"],
+          ['CAD',"http://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/cad.xml"],
            ['AUD',"http://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/aud.xml"],
            ['QDP',"http://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/gbp.xml"]],
     'RUB':[ ['USD','http://www.cbr.ru/scripts/XML_dynamic.asp?date_req1=01/01/1999&date_req2=31/12/2044&VAL_NM_RQ=R01235'],
