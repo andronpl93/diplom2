@@ -123,6 +123,7 @@ var objChart={
 };
 var pointSet=function(jdata){
             loader.fadeOut(300);
+            objChart.series=[];
              objChart.series.push({data: jdata.dat[1]});
              objChart.xAxis= {
                             title: {
@@ -200,6 +201,7 @@ $(document).ready(function() {//////////////////////////////////////////////////
     $('header ul li input').bind('click',work);                         ///  обновление графика
     $('header ul select').bind('change',delete_option);             ///   удалять из соседнего выпадающего списка
 
+
 });
 //
 function work(){
@@ -226,8 +228,8 @@ function work(){
     }
     objAjax.success=ajaxSet[chart.attr('id')];
 
-    loader.fadeIn(300,function(){
-                    $.ajax(objAjax)});
+  loader.fadeIn(300,function(){
+                   $.ajax(objAjax)});
 
 
 }
@@ -266,16 +268,17 @@ function delete_option(obj){
 
 
     function restructuring(){
-                if(!$('header ul li input#crisis:checked').length)
+                if($('#crisis:checked').length==0 )
                 {
-                    $('header').animate({'width':'16%'},300);
-                    $('#chart_id').animate({'width':'80%'},300);
-                    $('footer').animate({'width':'0%'},300);
+                    $('footer').css({'width':'0%'});
+                    $('#chart_id').css({'width':'80%'});
+                    $('header').css({'width':'16%'});
+
                     $('footer div:first-child p:last-child').html('');
                     $('footer div:last-child p:last-child').html('');
                 }else{
-                    $('header,footer').animate({'width':'12%'},300);
-                    $('#chart_id').animate({'width':'70%'},300);
+                    $('header,footer').css({'width':'12%'});
+                    $('#chart_id').css({'width':'70%'});
                 }
 
     }

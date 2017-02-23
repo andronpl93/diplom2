@@ -17,7 +17,8 @@ section > div,header,footer {
     margin: 0 ;
      background: linear-gradient(to top,#EEEEEE 40%,#CAE1F4 100%);
      box-shadow: 0 5px 20px 0px rgba(0,0,0,0.5);
-     position: relative;
+
+      transition: all 0.5s ease;
 }
 
 section > div{
