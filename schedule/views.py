@@ -19,7 +19,7 @@ def graf(request,currency='EUR'):   # курс валют
     for i in url[currency]:
         a.append(i[0])
 
-    return HttpResponse(json.dumps(normalize(parsers[currency](a))))
+    return HttpResponse(json.dumps( normalize(parsers[currency](a))))
 
 def couple(request,cur1='EUR',cur2='RUB',currency='USD'):   # попарное сравнение
     a=[]
@@ -145,16 +145,16 @@ def parseRUB(curr):
 
 def normalize(paket):
     for i in range(1,len(paket['dat']),2):
-        mYmin=min(paket['dat'][i])
-        mYmax=max(paket['dat'][i])
+        mmax=max(paket['dat'][i],key=lambda x: x[-1])
+        mmin=min(paket['dat'][i],key=lambda x: x[-1])
         for j in range(len(paket['dat'][i][:])):
-            paket['dat'][i][j][-1]=round((paket['dat'][i][j][-1]-myMin)/(mYmax-mYmin),2)
+            paket['dat'][i][j][-1]=round((paket['dat'][i][j][-1]-mmin)/(mmax-mmin),2)
 
     return paket
 
 def parser(url): ##
     tree = []
-    urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler({'http': 'proxy.server: 3128'})))
+    urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler({' HTTP': 'proxy.server: 3128'})))
     tree.append(et.parse(urllib.request.urlopen(url[1])))
 
     root = []
