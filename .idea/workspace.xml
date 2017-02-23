@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="453d44a8-7738-419a-b512-231d2e3d60ae" name="Default" comment="нормализацияраб">
+    <list default="true" id="453d44a8-7738-419a-b512-231d2e3d60ae" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schedule/static/js/highcharts/main.js" afterPath="$PROJECT_DIR$/schedule/static/js/highcharts/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schedule/views.py" afterPath="$PROJECT_DIR$/schedule/views.py" />
@@ -62,8 +62,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/schedule/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="156" column="96" lean-forward="false" selection-start-line="156" selection-start-column="96" selection-end-line="156" selection-end-column="96" />
+            <state relative-caret-position="316">
+              <caret line="155" column="96" lean-forward="false" selection-start-line="155" selection-start-column="96" selection-end-line="155" selection-end-column="96" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -94,10 +94,10 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/schedule/static/js/highcharts/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-247">
-              <caret line="107" column="73" lean-forward="false" selection-start-line="107" selection-start-column="73" selection-end-line="107" selection-end-column="73" />
+            <state relative-caret-position="136">
+              <caret line="218" column="15" lean-forward="false" selection-start-line="218" selection-start-column="15" selection-end-line="218" selection-end-column="15" />
               <folding>
-                <element signature="e#0#9556#0" expanded="false" />
+                <element signature="e#0#9593#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -575,17 +575,24 @@
       <option name="project" value="LOCAL" />
       <updated>1487882331822</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="убрал легенду">
+      <created>1487885341998</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1487885341998</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="58" y="-4" width="1312" height="776" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18238504" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29071537" sideWeight="0.5074045" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17199391" sideWeight="0.4925955" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17199391" sideWeight="0.4925955" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23592085" sideWeight="0.497272" order="9" side_tool="false" content_ui="tabs" />
@@ -619,7 +626,8 @@
     <MESSAGE value="нормализация&#10;" />
     <MESSAGE value="нормализация2&#10;" />
     <MESSAGE value="нормализацияраб" />
-    <option name="LAST_COMMIT_MESSAGE" value="нормализацияраб" />
+    <MESSAGE value="убрал легенду" />
+    <option name="LAST_COMMIT_MESSAGE" value="убрал легенду" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -633,7 +641,7 @@
         <state relative-caret-position="4760">
           <caret line="280" column="32" lean-forward="false" selection-start-line="280" selection-start-column="32" selection-end-line="280" selection-end-column="32" />
           <folding>
-            <element signature="e#0#9556#0" expanded="false" />
+            <element signature="e#0#9593#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -701,7 +709,7 @@
         <state relative-caret-position="4760">
           <caret line="280" column="32" lean-forward="false" selection-start-line="280" selection-start-column="32" selection-end-line="280" selection-end-column="32" />
           <folding>
-            <element signature="e#0#9556#0" expanded="false" />
+            <element signature="e#0#9593#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -769,7 +777,7 @@
         <state relative-caret-position="3451">
           <caret line="203" column="2" lean-forward="false" selection-start-line="203" selection-start-column="2" selection-end-line="203" selection-end-column="2" />
           <folding>
-            <element signature="e#0#9556#0" expanded="false" />
+            <element signature="e#0#9593#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -836,7 +844,7 @@
         <state relative-caret-position="2380">
           <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9556#0" expanded="false" />
+            <element signature="e#0#9593#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -896,7 +904,7 @@
         <state relative-caret-position="2142">
           <caret line="126" column="0" lean-forward="true" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9556#0" expanded="false" />
+            <element signature="e#0#9593#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -930,7 +938,7 @@
         <state relative-caret-position="1598">
           <caret line="94" column="34" lean-forward="false" selection-start-line="94" selection-start-column="34" selection-end-line="94" selection-end-column="34" />
           <folding>
-            <element signature="e#0#9556#0" expanded="false" />
+            <element signature="e#0#9593#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1034,18 +1042,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/schedule/static/js/highcharts/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-247">
-          <caret line="107" column="73" lean-forward="false" selection-start-line="107" selection-start-column="73" selection-end-line="107" selection-end-column="73" />
+        <state relative-caret-position="136">
+          <caret line="218" column="15" lean-forward="false" selection-start-line="218" selection-start-column="15" selection-end-line="218" selection-end-column="15" />
           <folding>
-            <element signature="e#0#9556#0" expanded="false" />
+            <element signature="e#0#9593#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/schedule/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="156" column="96" lean-forward="false" selection-start-line="156" selection-start-column="96" selection-end-line="156" selection-end-column="96" />
+        <state relative-caret-position="316">
+          <caret line="155" column="96" lean-forward="false" selection-start-line="155" selection-start-column="96" selection-end-line="155" selection-end-column="96" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>

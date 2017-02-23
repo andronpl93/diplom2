@@ -1,7 +1,7 @@
 
 
 // Two charts definition
-var chart1, chart2,statusDel=1;
+var chart1, chart2,statusDel=1, objChart;
 var loader=$('#preloader');
 loader.fadeOut();
 var currensy, chart;
@@ -41,6 +41,11 @@ var pointChart={
                 enabled:false,
 
     },
+      tooltip: {
+            pointFormat: '<span style="color:{series.color}">{series.name}</span>:<b> {point.y} </b><br/>',
+            valueDecimals: 2
+        },
+                series: [],
 
 
 
@@ -94,6 +99,11 @@ var dateChart={
                         width: 60
                 },
            },
+                   tooltip: {
+            pointFormat: '<span style="color:{series.color}">{series.name}</span>:<b> {point.y} </b><br/>',
+            valueDecimals: 2
+        },
+                series: [],
 }
 
 var settings={
@@ -103,24 +113,8 @@ var settings={
     'couple': pointChart,
 
 };
-var objChart={
-        tooltip: {
-            pointFormat: '<span style="color:{series.color}">{series.name}</span>:<b> {point.y} </b><br/>',
-            valueDecimals: 2
-        },
-        yAxis: {
-            title: {
-            enable: false,
-            //        text:'деньга',
-                }
-        },
-        title: {
-            enable: false,
-            text: ''
-        },
 
-        series: []
-};
+var objChart2=objChart;
 var pointSet=function(jdata){
             loader.fadeOut(300);
             objChart.series=[];
@@ -222,7 +216,7 @@ function work(){
         d_i=chart.attr('data-index')+'/'
     }
     objAjax.url='/'+chart.attr('id')+'/'+d_i+currency.attr('id');
-
+    objChart={}
     for(var key in settings[chart.attr('id')]){
         objChart[key]=settings[chart.attr('id')][key];
     }

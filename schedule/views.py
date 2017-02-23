@@ -145,10 +145,9 @@ def parseRUB(curr):
 
 def normalize(paket):
     for i in range(1,len(paket['dat']),2):
-        mmax=max(paket['dat'][i][:],key=lambda x: x[-1])[-1]
-        mmin=min(paket['dat'][i][:],key=lambda x: x[-1])[-1]
+        st=paket['dat'][i][0][-1];
         for j in range(len(paket['dat'][i])):
-            paket['dat'][i][j][-1]=round((paket['dat'][i][j][-1]-mmin)/(mmax-mmin),2)
+            paket['dat'][i][j][-1]=round(paket['dat'][i][j][-1]/st,2)
 
     return paket
 
