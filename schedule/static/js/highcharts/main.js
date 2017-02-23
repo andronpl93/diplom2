@@ -105,7 +105,7 @@ var settings={
 };
 var objChart={
         tooltip: {
-            pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y} </b><br/>',
+            pointFormat: '<span style="color:{series.color}">{series.name}</span>:<b> {point.y} </b><br/>',
             valueDecimals: 2
         },
         yAxis: {
