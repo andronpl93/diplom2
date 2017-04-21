@@ -3,7 +3,9 @@
 // Two charts definition
 var chart1, chart2,statusDel=1, objChart;
 var loader=$('#preloader');
-loader.fadeOut();
+loader.fadeOut(); ////////////////////////// это важно
+$('.bred').fadeOut();
+
 var currensy, chart;
 var pointChart={
     chart: {
@@ -155,12 +157,12 @@ var ajaxSet={
                     {
                         objChart.series.push({name:jdata.dat[i],data:jdata.dat[i+1]});
                     }
-                    var color='rgba(0,172,204,0.4)';
+                    var color='rgba(0,172,204,1)';
                     var sp=''
                     var interval=$('footer div:first-child p:last-child');
                     for (var i=0; i<jdata.dat[2].length;i++){
                         sp+='<span style="background-color:'+color+';">';
-                        color == 'rgba(0,172,204,0.4)' ? color='rgba(0,172,0,0.4)': color='rgba(0,172,204,0.4)';
+                        color == 'rgba(0,172,204,1)' ? color='rgba(0,172,0,1)': color='rgba(0,172,204,1)';
                         for (var j=0;j<jdata.dat[2][i].length;j++){
                             sp+=jdata.dat[2][i][j]+', ';
                         }
@@ -189,28 +191,38 @@ var objAjax={
 
 $(document).ready(function() {///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+   var a=[1,2,3,4,5,6,7,8,7,5,5,3,3,5,65];
+
+  // dateChart.series=[];
+  // dateChart.series.push({data:a});
+ //  Highcharts.stockChart('chart_id',dateChart);
+ //  bredota();
+ //  $('nav ul li input').bind('click',bredota);
+
     work();
-    update_select();
-    $('header ul li input[name=selector]').bind('click',update_select); /// смена валюты обновляет выпадающие списки попарного сравнения
-    $('header ul li input').bind('click',work);                         ///  обновление графика
-    $('header ul select').bind('change',delete_option);             ///   удалять из соседнего выпадающего списка
+    update_select(); // Засунуть в выпадающее списки доступные валюты
+    $('nav ul li input[name=selector]').bind('click',update_select); /// смена валюты обновляет выпадающие списки попарного сравнения
+    $('nav ul li input').bind('click',work);                         ///  обновление графика
+    $('nav ul select').bind('change',delete_option);             ///   удалять из соседнего выпадающего списка
 
 
 });
 //
 function work(){
-    restructuring();
-    $('footer div:first-child p:last-child').html('');
-    $('footer div:last-child p:last-child').html('');
-    if($('header ul li input.para:checked').length)
+
+    restructuring();   // выдвигает панель слева для кризиса
+    bredota();
+    $('footer div:first-child p:last-child').html(''); // удаляет говно  с левой панели кризиса
+    $('footer div:last-child p:last-child').html(''); // удаляет говно  с левой панели кризиса
+    if($('nav ul li input.para:checked').length)
     {
-        if($('select option[value]:selected').length!=2)
+        if($('select option[value]:selected').length!=2) // На тот случай если мы кликнули только по одному в. списку(деньги или график), то игнорим, пока не появится второй
             return
         else
-           $('header ul li input.para').attr('data-index',$('select[name=cur1]').val()+'_'+$('select[name=cur2]').val());   ///couple/RUB+RUB
+           $('nav ul li input.para').attr('data-index',$('select[name=cur1]').val()+'_'+$('select[name=cur2]').val());   ///couple/RUB+RUB
     }
-    currency = $('header input[name=selector]:checked');
-    chart = $('header input[name=selector2]:checked');
+    currency = $('nav input[name=selector]:checked');
+    chart = $('nav input[name=selector2]:checked');
     var d_i='';
     if(chart.attr('data-index')){
         d_i=chart.attr('data-index')+'/'
@@ -224,12 +236,13 @@ function work(){
 
   loader.fadeIn(300,function(){
                    $.ajax(objAjax)});
+    update_select();
 
 
 }
 
 function update_select(){
-    currency = $('header input[name=selector]:checked');
+    currency = $('nav input[name=selector]:checked');
     var objAjaxSelect={
                 timeout:1000,
                 async: false,
@@ -246,17 +259,21 @@ function update_select(){
 }
 
 function delete_option(obj){
+
     var self=$(this);
     var valSelf=self.val();
-    var context=$('header ul select').not(self);
+    var context=$('nav ul select').not(self);
     var contextVal=context.val();
     update_select();
             self.val(valSelf);
             context.val(contextVal);
             $('option[value='+self.val()+']',context).remove();
-    if($('select option[value]:selected').length==2 && $('header ul li input.para:checked').length)
+    if($('select option[value]:selected').length==2 && $('nav ul li input.para:checked').length)
         work();
-
+    $('select').css('background-color','white');
+    $('select option[value]:selected').each(function(){
+        $(this).parent('select').css('background-color','#00E5FF');
+    });
 }
 
 
@@ -265,20 +282,27 @@ function delete_option(obj){
                 if($('#crisis:checked').length==0 )
                 {
                     $('footer').css({'width':'0%'});
-                    $('#chart_id').css({'width':'80%'});
-                    $('header').css({'width':'16%'});
+                    $('#chart_id').css({'width':'100%'});
 
                     $('footer div:first-child p:last-child').html('');
                     $('footer div:last-child p:last-child').html('');
                 }else{
-                    $('header,footer').css({'width':'12%'});
-                    $('#chart_id').css({'width':'70%'});
+                    $('footer').css({'width':'20%'});
+                    $('#chart_id').css({'width':'80%'});
                 }
 
     }
 
 
+function bredota(){
+    $('.bred').fadeOut(300);
+    var i=$('nav ul li input[name="selector2"]:checked');
+    $('nav ul li ').removeClass('actv');   // это нужно для перемещения  выпадающих списков
+    i.parent('li').addClass('actv');
+    $('.bred[id="B'+i.attr('id')+'"]').fadeIn(700);
 
+
+}
 
 
 

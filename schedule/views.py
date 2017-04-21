@@ -18,7 +18,7 @@ def graf(request,currency='EUR'):   # курс валют
     a=[]
     for i in url[currency]:
         a.append(i[0])
-
+    logging.debug(0)
     return HttpResponse(json.dumps( normalize(parsers[currency](a))))
 
 def couple(request,cur1='EUR',cur2='RUB',currency='USD'):   # попарное сравнение
@@ -88,6 +88,7 @@ def update_select(request,currency):
     return render(request,'schedule/select.html',{'select':sel})
 
 def parseEUR(curr):
+    logging.debug(1)
     paket={'dat':[],'len':len(url['EUR'])}
 
     for u in range(len(url['EUR'])):
@@ -110,7 +111,7 @@ def parseEUR(curr):
                         mil=int(mil)
                         paket['dat'][-1][-1].append(mil)
                         paket['dat'][-1][-1].append(float(b[i][j].get("OBS_VALUE")))
-
+    logging.debug(2)
     return paket
 
 
@@ -145,7 +146,7 @@ def parseRUB(curr):
 
 def normalize(paket):
     for i in range(1,len(paket['dat']),2):
-        st=paket['dat'][i][0][-1];
+        st=paket['dat'][i][0][-1]
         for j in range(len(paket['dat'][i])):
             paket['dat'][i][j][-1]=round(paket['dat'][i][j][-1]/st,2)
 
@@ -180,12 +181,12 @@ url={
           ['USD','http://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/usd.xml'],
          ['CAD',"http://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/cad.xml"],
            ['AUD',"http://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/aud.xml"],
-           ['QDP',"http://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/gbp.xml"]],
+           ['GBP',"http://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/gbp.xml"]],
     'RUB':[ ['USD','http://www.cbr.ru/scripts/XML_dynamic.asp?date_req1=01/01/1999&date_req2=31/12/2044&VAL_NM_RQ=R01235'],
            ['AUD','http://www.cbr.ru/scripts/XML_dynamic.asp?date_req1=01/01/1999&date_req2=31/12/2044&VAL_NM_RQ=R01010'],
            ['GBP','http://www.cbr.ru/scripts/XML_dynamic.asp?date_req1=01/01/1999&date_req2=31/12/2044&VAL_NM_RQ=R01035' ],
            ['EUR','http://www.cbr.ru/scripts/XML_dynamic.asp?date_req1=01/01/1999&date_req2=31/12/2044&VAL_NM_RQ=R01239'],
-           ['CAD','http://www.cbr.ru/scripts/XML_dynamic.asp?date_req1=01/01/1999&date_req2=31/12/2044&VAL_NM_RQ=R01350']],
+          ['CAD','http://www.cbr.ru/scripts/XML_dynamic.asp?date_req1=01/01/1999&date_req2=31/12/2044&VAL_NM_RQ=R01350']],
 
 }
 logging.basicConfig(

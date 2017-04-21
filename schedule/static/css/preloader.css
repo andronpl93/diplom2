@@ -9,7 +9,7 @@
     align-items: center;
     z-index: 50000;
     background: none;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.5);
 }
 .cssload-tetrominos {
 	position: absolute;

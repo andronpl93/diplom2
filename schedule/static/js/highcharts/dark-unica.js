@@ -2,24 +2,7 @@
 Highcharts.theme = {
   "colors": ["#00AACC", "#FF4E00", "#B90000", "#5F9B0A", "#CD6723"],
   "chart": {
-    "backgroundColor": {
-      "linearGradient": [
-        0,
-        0,
-        0,
-        300
-      ],
-      "stops": [
-        [
-          0,
-          "#CAE1F4"
-        ],
-        [
-          1,
-          "#EEEEEE"
-        ]
-      ]
-    },
+    "backgroundColor": "#932985",
     "style": {
       "fontFamily": "Open Sans"
     }
@@ -42,7 +25,7 @@ Highcharts.theme = {
 		tickColor: '#000',
 		labels: {
 			style: {
-				color: '#000',
+				color: 'rgba(255,255,255,01)',
 				font: '11px Trebuchet MS, Verdana, sans-serif'
 			}
 		},
@@ -64,7 +47,7 @@ Highcharts.theme = {
 		tickColor: '#000',
 		labels: {
 			style: {
-				color: '#000',
+				color: 'rgba(255,255,255,1)',
 				font: '11px Trebuchet MS, Verdana, sans-serif'
 			}
 		},
