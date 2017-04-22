@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="453d44a8-7738-419a-b512-231d2e3d60ae" name="Default" comment="редизайн">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/diplom/settings.py" afterPath="$PROJECT_DIR$/diplom/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schedule/templates/schedule/index.html" afterPath="$PROJECT_DIR$/schedule/templates/schedule/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schedule/static/css/main.css" afterPath="$PROJECT_DIR$/schedule/static/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schedule/static/js/highcharts/dark-unica.js" afterPath="$PROJECT_DIR$/schedule/static/js/highcharts/dark-unica.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schedule/views.py" afterPath="$PROJECT_DIR$/schedule/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,43 +23,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/diplom/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="121" column="0" lean-forward="true" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="grid.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/schedule/static/js/highcharts/grid.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/schedule/templates/schedule/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="136" column="7" lean-forward="false" selection-start-line="136" selection-start-column="7" selection-end-line="136" selection-end-column="7" />
-              <folding>
-                <element signature="n#ul#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dark-unica.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dark-unica.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/schedule/static/js/highcharts/dark-unica.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1106">
-              <caret line="2" column="65" lean-forward="false" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
+            <state relative-caret-position="68">
+              <caret line="4" column="31" lean-forward="false" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -80,8 +48,8 @@
       <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/schedule/static/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="31" column="16" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+            <state relative-caret-position="17">
+              <caret line="1" column="29" lean-forward="false" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -90,8 +58,8 @@
       <file leaf-file-name="menu.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/schedule/static/css/menu.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="21" lean-forward="true" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+            <state relative-caret-position="1836">
+              <caret line="108" column="42" lean-forward="false" selection-start-line="108" selection-start-column="42" selection-end-line="108" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -147,11 +115,13 @@
       <find>#FFDD00</find>
       <find>color:&quot;white</find>
       <find>#ffffff</find>
+      <find>#303F9F</find>
       <find>#FFFFF</find>
     </findStrings>
     <replaceStrings>
       <replace>#FFDD00</replace>
       <replace>#303F9F</replace>
+      <replace>#2E2E2E</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -166,14 +136,14 @@
         <option value="$PROJECT_DIR$/schedule/urls.py" />
         <option value="$PROJECT_DIR$/schedule/static/js/highcharts/grid.js" />
         <option value="$PROJECT_DIR$/schedule/static/css/preloader.css" />
-        <option value="$PROJECT_DIR$/schedule/static/css/main.css" />
         <option value="$PROJECT_DIR$/schedule/static/css/menu.css" />
         <option value="$PROJECT_DIR$/schedule/static/js/highcharts/main.js" />
-        <option value="$PROJECT_DIR$/schedule/static/js/highcharts/dark-unica.js" />
         <option value="$PROJECT_DIR$/schedule/views.py" />
         <option value="$PROJECT_DIR$/schedule/static/js/highcharts/highcharts.js" />
         <option value="$PROJECT_DIR$/schedule/templates/schedule/index.html" />
         <option value="$PROJECT_DIR$/diplom/settings.py" />
+        <option value="$PROJECT_DIR$/schedule/static/css/main.css" />
+        <option value="$PROJECT_DIR$/schedule/static/js/highcharts/dark-unica.js" />
       </list>
     </option>
   </component>
@@ -656,7 +626,14 @@
       <option name="project" value="LOCAL" />
       <updated>1492860402554</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="редизайн">
+      <created>1492861017309</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1492861017309</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -703,9 +680,9 @@
     <MESSAGE value="убрал легенду" />
     <MESSAGE value="баги&#10;" />
     <MESSAGE value="баги2&#10;" />
-    <MESSAGE value="редизайн" />
     <MESSAGE value="сине-желтый" />
-    <option name="LAST_COMMIT_MESSAGE" value="сине-желтый" />
+    <MESSAGE value="редизайн" />
+    <option name="LAST_COMMIT_MESSAGE" value="редизайн" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1069,30 +1046,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/schedule/static/js/highcharts/grid.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schedule/static/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="31" column="16" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schedule/static/css/menu.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="21" lean-forward="true" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/schedule/static/js/highcharts/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
@@ -1113,18 +1066,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/schedule/static/js/highcharts/dark-unica.js">
+    <entry file="file://$PROJECT_DIR$/diplom/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1106">
-          <caret line="2" column="65" lean-forward="false" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
+        <state relative-caret-position="414">
+          <caret line="121" column="0" lean-forward="true" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/schedule/static/js/highcharts/highcharts.js">
+    <entry file="file://$PROJECT_DIR$/schedule/static/js/highcharts/grid.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="417" column="26" lean-forward="false" selection-start-line="417" selection-start-column="26" selection-end-line="417" selection-end-column="26" />
+        <state relative-caret-position="187">
+          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -1139,10 +1092,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/diplom/settings.py">
+    <entry file="file://$PROJECT_DIR$/schedule/static/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="121" column="0" lean-forward="true" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+        <state relative-caret-position="17">
+          <caret line="1" column="29" lean-forward="false" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schedule/static/css/menu.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1836">
+          <caret line="108" column="42" lean-forward="false" selection-start-line="108" selection-start-column="42" selection-end-line="108" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schedule/static/js/highcharts/highcharts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="417" column="26" lean-forward="false" selection-start-line="417" selection-start-column="26" selection-end-line="417" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schedule/static/js/highcharts/dark-unica.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="31" lean-forward="false" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
           <folding />
         </state>
       </provider>
