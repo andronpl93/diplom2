@@ -25,7 +25,7 @@ SECRET_KEY = 'msg14q3qc2-%o(3*duv)j-xk8fe#mc-6rra5@!7ihz=raofsd-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['diplodok.pythonanywhere.com']
 
 
 # Application definition
