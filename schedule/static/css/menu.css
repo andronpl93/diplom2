@@ -6,7 +6,7 @@
     nav ul:last-child{
         float: left;
         position: relative;
-        border-right: 5px double #00E5FF;
+        border-right: 5px double #FFDD00;
         padding-right: 1%;
     }
     nav ul{
@@ -87,7 +87,7 @@
                             z-index: 99;
                         }
                             .a:before,.b:before,.c:before,.d:before{
-                                background-color: #00E5FF;
+                                background-color: #FFDD00;
                                 transition: all 1s ease;
                                 position: absolute;
                                 z-index: 100;
@@ -120,11 +120,11 @@
 
                         }
                         nav ul li input:checked{
-                            color:#00E5FF;
+                            color:#FFDD00;
                         }
 
     nav ul li:hover,nav ul li input:checked + label{
-         color:#00E5FF;
+         color:#FFDD00;
     }
     nav ul li:hover .a:before,nav ul li:hover .c:before,  nav ul li input:checked ~ .a:before, nav ul li input:checked ~ .c:before{
         height:154%;

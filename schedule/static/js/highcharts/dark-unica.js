@@ -1,8 +1,8 @@
 
 Highcharts.theme = {
-  "colors": ["#00AACC", "#FF4E00", "#B90000", "#5F9B0A", "#CD6723"],
+  "colors": ["#FFFF00", "#FF0000", "#00FF00", "#000000", "#FF00AE"],
   "chart": {
-    "backgroundColor": "#932985",
+    "backgroundColor": "#303F9F",
     "style": {
       "fontFamily": "Open Sans"
     }

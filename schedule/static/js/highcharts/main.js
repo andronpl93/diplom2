@@ -272,7 +272,7 @@ function delete_option(obj){
         work();
     $('select').css('background-color','white');
     $('select option[value]:selected').each(function(){
-        $(this).parent('select').css('background-color','#00E5FF');
+        $(this).parent('select').css('background-color','#FFDD00');
     });
 }
 
