@@ -34,11 +34,10 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/schedule/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
-              <caret line="151" column="8" lean-forward="false" selection-start-line="151" selection-start-column="8" selection-end-line="151" selection-end-column="8" />
+            <state relative-caret-position="654">
+              <caret line="124" column="8" lean-forward="false" selection-start-line="124" selection-start-column="8" selection-end-line="124" selection-end-column="8" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
-                <element signature="e#3001#3883#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -673,7 +672,14 @@
       <option name="project" value="LOCAL" />
       <updated>1494600129056</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="текста добавил и долларовый парсер">
+      <created>1494600864494</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1494600864494</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -782,7 +788,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#3001#3883#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -851,7 +856,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#3001#3883#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -919,7 +923,6 @@
           <caret line="36" column="28" lean-forward="false" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#3001#3883#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -980,7 +983,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#3001#3883#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1155,11 +1157,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/schedule/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="151" column="8" lean-forward="false" selection-start-line="151" selection-start-column="8" selection-end-line="151" selection-end-column="8" />
+        <state relative-caret-position="654">
+          <caret line="124" column="8" lean-forward="false" selection-start-line="124" selection-start-column="8" selection-end-line="124" selection-end-column="8" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#3001#3883#0" expanded="false" />
           </folding>
         </state>
       </provider>

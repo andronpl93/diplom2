@@ -149,9 +149,11 @@ def parseUSD(curr):
     for u in range(len(url['USD'])):
         if not url['USD'][u][0] in curr:
             continue
-        urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler({'http': 'proxy.server: 3128'})))
-        a = urllib.request.urlopen(url['USD'][u][1])
 
+        urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler({'http': 'proxy.server: 3128'})))
+        a = urlopen(url['USD'][u][1])
+
+        logging.debug('01')
         soup = BeautifulSoup(a.read())
         table = soup.find('table')
 
@@ -164,7 +166,6 @@ def parseUSD(curr):
         for row in table.findAll('tr'):
             for col in row.findAll('td'):
                 rates.append(col.text.strip())
-        logging.debug(rates)
         paket['dat'].append([url['USD'][u][0]])
         paket['dat'].append([])
         for i in range(len(datetime)):
@@ -254,9 +255,9 @@ url={
             ['RUB',"http://bank.gov.ua/control/uk/curmetal/currency/search?formType=searchPeriodForm&time_step=daily&currency=209&periodStartTime=01.01.1999&periodEndTime=22.04.2030&outer=table&execute=%D0%92%D0%B8%D0%BA%D0%BE%D0%BD%D0%B0%D1%82%D0%B8"]],
     'USD': [['AUD', 'https://www.federalreserve.gov/releases/h10/Hist/dat00_al.htm'],
         ['GBP', 'https://www.federalreserve.gov/releases/h10/Hist/dat00_uk.htm'],
-        ['EUR', 'https://www.federalreserve.gov/releases/h10/Hist/dat00_eu.htm'],
+       ['EUR', 'https://www.federalreserve.gov/releases/h10/Hist/dat00_eu.htm'],
         ['CAD','https://www.federalreserve.gov/releases/h10/Hist/dat00_ca.htm'],
-        ['JPY','https://www.federalreserve.gov/releases/h10/Hist/dat00_ja.htm']],
+       ['JPY','https://www.federalreserve.gov/releases/h10/Hist/dat00_ja.htm']],
 }
 logging.basicConfig(
 	level = logging.DEBUG,
