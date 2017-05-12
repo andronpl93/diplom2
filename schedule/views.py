@@ -122,7 +122,7 @@ def parseUAH(curr):
     for u in range(len(url['UAH'])):
         if not url['UAH'][u][0] in curr:
             continue
-         urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler({'http': 'proxy.server: 3128'})))
+        urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler({'http': 'proxy.server: 3128'})))
         a=urlopen(url['UAH'][u][1]).read()
         soup = BeautifulSoup(a)
         table = soup.find('table', id='results0')
@@ -149,7 +149,7 @@ def parseUSD(curr):
     for u in range(len(url['USD'])):
         if not url['USD'][u][0] in curr:
             continue
-         urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler({'http': 'proxy.server: 3128'})))
+        urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler({'http': 'proxy.server: 3128'})))
         a = urlopen(url['USD'][u][1])
 
         soup = BeautifulSoup(a.read())
