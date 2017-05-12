@@ -9,9 +9,13 @@ $('.bred').fadeOut();
 var currensy, chart;
 var pointChart={
     chart: {
-        type: 'scatter',
+        type: 'line',
         zoomType: 'xy'
     },
+    legend:{
+        color:'white',
+    },
+
     plotOptions: {
         series: {
                     showInNavigator: true,
@@ -34,6 +38,7 @@ var pointChart={
                 }
             },
             tooltip: {
+                backgroundColor: 'rgba(0,0,0,0.5)',
                 headerFormat: '<b>{series.name}</b><br>',
                 pointFormat: ' {point.y} '
             }
@@ -44,6 +49,7 @@ var pointChart={
 
     },
       tooltip: {
+            backgroundColor: 'rgba(0,0,0,0.5)',
             pointFormat: '<span style="color:{series.color}">{series.name}</span>:<b> {point.y} </b><br/>',
             valueDecimals: 2
         },
@@ -56,6 +62,7 @@ var dateChart={
            chart: {
                 type: 'spline',
            },
+
            plotOptions: {
                 series: {
                     showInNavigator: true,
@@ -101,7 +108,9 @@ var dateChart={
                         width: 60
                 },
            },
-                   tooltip: {
+           tooltip: {
+            backgroundColor: 'rgba(0,0,0,0.5)',
+           color:'black',
             pointFormat: '<span style="color:{series.color}">{series.name}</span>:<b> {point.y} </b><br/>',
             valueDecimals: 2
         },
@@ -125,14 +134,18 @@ var pointSet=function(jdata){
                             title: {
                                 enabled: true,
                                 text: jdata.dat[0],
+                                color: '#FFDD00',
                             },
+                            color: '#FFDD00',
                             startOnTick: true,
                             endOnTick: true,
                             showLastLabel: true
              };
             objChart.yAxis= {
+            color: '#FFDD00',
                         title: {
                              text: jdata.dat[2],
+                             color: '#FFDD00',
                         }
             };
 
