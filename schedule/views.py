@@ -150,7 +150,7 @@ def parseUSD(curr):
         if not url['USD'][u][0] in curr:
             continue
         urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler({'http': 'proxy.server: 3128'})))
-        a = urlopen(url['USD'][u][1])
+        a = urllib.request.urlopen(url['USD'][u][1])
 
         soup = BeautifulSoup(a.read())
         table = soup.find('table')
@@ -178,7 +178,6 @@ def parseUSD(curr):
                 paket['dat'][-1][-1].append(float(rates[i]))
             except ValueError:
                 pass
-        logging.debug(paket['dat'])
     return paket
 
 def parseRUB(curr):
@@ -202,7 +201,6 @@ def parseRUB(curr):
             mil=int(mil)
             paket['dat'][-1][-1].append(mil)
             paket['dat'][-1][-1].append(float(b[i].replace(',', '.')))
-        logging.debug(paket['dat'])
     return paket
 
 
