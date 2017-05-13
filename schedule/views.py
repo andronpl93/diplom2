@@ -62,7 +62,7 @@ def crisis(request,cur1='EUR',cur2='RUB',currency='USD'):   # кризис го�
     if currency=='RUB':
         avarage = (sum(i[1] for i in pak2['dat'][1]) / len(pak2['dat'][1])) * 1.5
     else:
-        avarage = (sum(i[1] for i in pak2['dat'][1]) / len(pak2['dat'][1])) * 4
+        avarage = (sum(i[1] for i in pak2['dat'][1]) / len(pak2['dat'][1])) * 3
 
     for i in range(3,len(pak2['dat'][1])):
         if pak2['dat'][1][i][1]>avarage:
