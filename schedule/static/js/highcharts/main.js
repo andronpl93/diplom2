@@ -58,7 +58,7 @@ var pointChart={
 
 
 };
-var pointChart20;
+var pointChart20={};
 for(var key in pointChart)
     pointChart20[key]=pointChart[key];
 pointChart20.chart={
