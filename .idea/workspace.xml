@@ -78,10 +78,10 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/schedule/static/js/highcharts/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="128" column="26" lean-forward="false" selection-start-line="128" selection-start-column="26" selection-end-line="128" selection-end-column="26" />
+            <state relative-caret-position="221">
+              <caret line="64" column="19" lean-forward="false" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
               <folding>
-                <element signature="e#0#10930#0" expanded="false" />
+                <element signature="e#0#10986#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -699,7 +699,14 @@
       <option name="project" value="LOCAL" />
       <updated>1494667307290</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="нормализацию переделал, потому что спасский пидор">
+      <created>1494667403666</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1494667403666</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -784,7 +791,7 @@
         <state relative-caret-position="4760">
           <caret line="280" column="32" lean-forward="false" selection-start-line="280" selection-start-column="32" selection-end-line="280" selection-end-column="32" />
           <folding>
-            <element signature="e#0#10930#0" expanded="false" />
+            <element signature="e#0#10986#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -852,7 +859,7 @@
         <state relative-caret-position="4760">
           <caret line="280" column="32" lean-forward="false" selection-start-line="280" selection-start-column="32" selection-end-line="280" selection-end-column="32" />
           <folding>
-            <element signature="e#0#10930#0" expanded="false" />
+            <element signature="e#0#10986#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -920,7 +927,7 @@
         <state relative-caret-position="3451">
           <caret line="203" column="2" lean-forward="false" selection-start-line="203" selection-start-column="2" selection-end-line="203" selection-end-column="2" />
           <folding>
-            <element signature="e#0#10930#0" expanded="false" />
+            <element signature="e#0#10986#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -987,7 +994,7 @@
         <state relative-caret-position="2380">
           <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
           <folding>
-            <element signature="e#0#10930#0" expanded="false" />
+            <element signature="e#0#10986#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1047,7 +1054,7 @@
         <state relative-caret-position="2142">
           <caret line="126" column="0" lean-forward="true" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
           <folding>
-            <element signature="e#0#10930#0" expanded="false" />
+            <element signature="e#0#10986#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1082,7 +1089,7 @@
         <state relative-caret-position="1598">
           <caret line="94" column="34" lean-forward="false" selection-start-line="94" selection-start-column="34" selection-end-line="94" selection-end-column="34" />
           <folding>
-            <element signature="e#0#10930#0" expanded="false" />
+            <element signature="e#0#10986#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1196,10 +1203,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/schedule/static/js/highcharts/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="128" column="26" lean-forward="false" selection-start-line="128" selection-start-column="26" selection-end-line="128" selection-end-column="26" />
+        <state relative-caret-position="221">
+          <caret line="64" column="19" lean-forward="false" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
           <folding>
-            <element signature="e#0#10930#0" expanded="false" />
+            <element signature="e#0#10986#0" expanded="false" />
           </folding>
         </state>
       </provider>

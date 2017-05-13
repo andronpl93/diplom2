@@ -58,11 +58,15 @@ var pointChart={
 
 
 };
-var pointChart20=pointChart;
-pointChart20.chart= {
+var pointChart20;
+for(var key in pointChart)
+    pointChart20[key]=pointChart[key];
+pointChart20.chart={
         type: 'line',
         zoomType: 'xy'
     };
+
+
 var dateChart={
            chart: {
                 type: 'spline',
