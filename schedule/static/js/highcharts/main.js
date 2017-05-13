@@ -58,6 +58,11 @@ var pointChart={
 
 
 };
+var pointChart20=pointChart;
+pointChart20.chart= {
+        type: 'line',
+        zoomType: 'xy'
+    };
 var dateChart={
            chart: {
                 type: 'spline',
@@ -121,7 +126,7 @@ var settings={
     'graf': dateChart,
     'jump': pointChart,
     'crisis': pointChart,
-    'couple': pointChart,
+    'couple': pointChart20,
 
 };
 
