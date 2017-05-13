@@ -59,7 +59,11 @@ def crisis(request,cur1='EUR',cur2='RUB',currency='USD'):   # кризис го�
         pak2['dat'][1][-1].append(math.sqrt((pak['dat'][1][i][-1]-pak['dat'][1][i-1][-1])**2 + (pak['dat'][3][i][-1]-pak['dat'][3][i-1][-1])**2))
 
 
-    avarage=(sum(i[1] for i  in pak2['dat'][1])/len(pak2['dat'][1]))*4
+    if currency=='RUB':
+        avarage = (sum(i[1] for i in pak2['dat'][1]) / len(pak2['dat'][1])) * 1.5
+    else:
+        avarage = (sum(i[1] for i in pak2['dat'][1]) / len(pak2['dat'][1])) * 4
+
     for i in range(3,len(pak2['dat'][1])):
         if pak2['dat'][1][i][1]>avarage:
             pak3['dat'][1].append([pak2['dat'][1][i][0]])
