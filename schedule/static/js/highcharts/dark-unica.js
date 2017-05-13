@@ -1,6 +1,6 @@
 
 Highcharts.theme = {
-  "colors": ["#FFFF00", "#FF0000", "#00FF00", "#000000", "#FF00AE"],
+  "colors": ["#FFFF00", "#FF0000", "#00FF00", "#FFFFFF", "#FF00AE"],
   "chart": {
     "backgroundColor": "#2E2E2E",
     "style": {
@@ -15,7 +15,7 @@ Highcharts.theme = {
 	},
 	subtitle: {
 		style: {
-			color: '#666666',
+			color: '#FFDD00',
 			font: 'bold 12px "Trebuchet MS", Verdana, sans-serif'
 		}
 	},
@@ -31,7 +31,7 @@ Highcharts.theme = {
 		},
 		title: {
 			style: {
-				color: '#333',
+				color: '#FFDD00',
 				fontWeight: 'bold',
 				fontSize: '12px',
 				fontFamily: 'Trebuchet MS, Verdana, sans-serif'
@@ -53,7 +53,7 @@ Highcharts.theme = {
 		},
 		title: {
 			style: {
-				color: '#333',
+				color: '#FFDD00',
 				fontWeight: 'bold',
 				fontSize: '12px',
 				fontFamily: 'Trebuchet MS, Verdana, sans-serif'

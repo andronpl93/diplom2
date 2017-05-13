@@ -9,7 +9,7 @@ $('.bred').fadeOut();
 var currensy, chart;
 var pointChart={
     chart: {
-        type: 'line',
+        type: 'scatter',
         zoomType: 'xy'
     },
     legend:{
@@ -134,20 +134,17 @@ var pointSet=function(jdata){
                             title: {
                                 enabled: true,
                                 text: jdata.dat[0],
-                                color: '#FFDD00',
                             },
-                            color: '#FFDD00',
                             startOnTick: true,
                             endOnTick: true,
                             showLastLabel: true
              };
             objChart.yAxis= {
-            color: '#FFDD00',
                         title: {
                              text: jdata.dat[2],
-                             color: '#FFDD00',
                         }
             };
+            objChart.title={text:''};
 
              Highcharts.chart('chart_id',objChart);
 };
